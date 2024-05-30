@@ -5,7 +5,7 @@
 </script>
 <template>
   <div class="col">
-    <img src="/public/img/boolean-logo.png" alt="logo" />
+    <img src="/img/boolean-logo.png" alt="logo" />
   </div>
 </template>
 
