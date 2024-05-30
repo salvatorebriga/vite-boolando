@@ -30,7 +30,7 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <Card> </Card>
+        <Card />
       </div>
     </div>
   </div>
