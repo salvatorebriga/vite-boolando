@@ -22,6 +22,7 @@
 
     a {
       font-size: 20px;
+      font-weight: 600;
       color: white;
       text-decoration: none;
 
