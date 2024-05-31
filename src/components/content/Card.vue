@@ -14,8 +14,16 @@
 <template>
   <div class="col">
     <div class="card">
-      <img class="front" :src="photo.frontImage" alt="product front" />
-      <img class="back" :src="photo.backImage" alt="product back" />
+      <img
+        class="front"
+        :src="`/public/img/${photo.frontImage}`"
+        alt="product front"
+      />
+      <img
+        class="back"
+        :src="`/public/img/${photo.backImage}`"
+        alt="product back"
+      />
       <p>{{ photo.brand }}</p>
       <h3>{{ photo.name }}</h3>
       <span class="orange">{{ photo.price }}$ </span>
