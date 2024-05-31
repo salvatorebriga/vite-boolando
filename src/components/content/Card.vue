@@ -10,57 +10,72 @@
   };
 </script>
 <template>
-  <div class="card">
-    <img :src="photo.src" alt="product" />
-    <p>{{ photo.brand }}</p>
-    <h3>{{ photo.text }}</h3>
-    <span>{{ photo.price }}$ </span>
-    <span>{{ photo.price }}$ </span>
-    <div class="labels">
-      <div class="red">
-        <p>-{{ photo.discount }}%</p>
-      </div>
-      <div class="green" v-show="photo.sustein === true">
-        <p>Susteinability</p>
+  <div class="col">
+    <div class="card">
+      <img :src="photo.frontImage" alt="product" />
+      <p>{{ photo.brand }}</p>
+      <h3>{{ photo.name }}</h3>
+      <span class="orange">{{ photo.price }}$ </span>
+      <span class="line-throught">{{ photo.price }}$ </span>
+      <div class="labels">
+        <div v-for="badge in photo.badges" :class="badge.type">
+          <p>{{ badge.value }}</p>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-  .card {
-    img {
-      width: 100%;
-      margin-bottom: 2px;
-    }
+  .col {
+    margin: 20px;
+    width: calc(100% / 3 - 40px);
 
-    h3 {
-      margin-bottom: 2px;
-    }
-
-    p {
-      margin-bottom: 2px;
-    }
-
-    .labels {
-      position: relative;
-      bottom: 150px;
-      display: flex;
-      color: white;
-      font-size: 15px;
-      font-weight: 800;
-
-      .red {
-        width: 50px;
-        background-color: red;
-        display: grid;
-        place-items: center;
+    .card {
+      img {
+        width: 100%;
+        margin-bottom: 2px;
       }
-      .green {
-        width: 150px;
-        background-color: green;
-        display: grid;
-        place-items: center;
+
+      h3 {
+        margin-bottom: 2px;
+      }
+
+      p {
+        margin-bottom: 2px;
+      }
+
+      .orange {
+        color: red;
+        font-weight: 600;
+      }
+
+      .line-throught {
+        text-decoration: line-through;
+        color: black;
+        font-weight: 600;
+      }
+
+      .labels {
+        position: relative;
+        bottom: 150px;
+        display: flex;
+        color: white;
+        font-size: 15px;
+        font-weight: 800;
+
+        .discount {
+          width: 50px;
+          background-color: red;
+          display: grid;
+          place-items: center;
+        }
+        .tag {
+          width: 150px;
+          background-color: green;
+          display: grid;
+          place-items: center;
+        }
       }
     }
   }
