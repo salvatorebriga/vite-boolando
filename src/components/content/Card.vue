@@ -33,6 +33,13 @@
           <p>{{ badge.value }}</p>
         </div>
       </div>
+      <div class="hearth">
+        <span
+          :class="{ red: photo.isInFavorites }"
+          @click="photo.isInFavorites = !photo.isInFavorites"
+          >&#10084;
+        </span>
+      </div>
     </div>
   </div>
 </template>
@@ -43,6 +50,7 @@
     width: calc(100% / 3 - 40px);
 
     .card {
+      position: relative;
       img {
         width: 100%;
         margin-bottom: 2px;
@@ -86,8 +94,8 @@
       }
 
       .labels {
-        position: relative;
-        bottom: 150px;
+        position: absolute;
+        bottom: 120px;
         display: flex;
         gap: 5px;
         color: white;
@@ -107,6 +115,29 @@
           background-color: green;
           display: grid;
           place-items: center;
+        }
+      }
+
+      .hearth {
+        position: absolute;
+        right: 0px;
+        top: 25px;
+        padding: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        background-color: white;
+
+        span {
+          font-size: 25px;
+
+          &:hover {
+            color: red;
+            cursor: pointer;
+          }
+        }
+
+        .red {
+          color: red;
         }
       }
     }
