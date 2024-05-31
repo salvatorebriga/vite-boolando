@@ -84,19 +84,44 @@
         gap: 5px;
         color: white;
         font-size: 15px;
-        font-weight: 800;
+        font-weight: 600;
 
         .discount {
-          width: 50px;
+          width: auto;
+          padding: 5px;
           background-color: red;
           display: grid;
           place-items: center;
         }
         .tag {
-          width: 150px;
+          width: auto;
+          padding: 5px;
           background-color: green;
           display: grid;
           place-items: center;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    .col {
+      margin: 20px;
+      width: calc(100% / 2 - 40px);
+      .card {
+        .labels {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 620px) {
+    .col {
+      margin: 20px;
+      width: 100%;
+      .card {
+        .labels {
+          font-size: 20px;
         }
       }
     }

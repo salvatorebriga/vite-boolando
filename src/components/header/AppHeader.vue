@@ -16,9 +16,9 @@
   <header>
     <div class="container">
       <div class="row">
-        <ColLeft />
-        <Logo />
-        <ColRight />
+        <ColLeft class="colLeft" />
+        <Logo class="logo" />
+        <ColRight class="colRight" />
       </div>
     </div>
   </header>
@@ -40,6 +40,46 @@
       .row {
         display: flex;
         flex-wrap: wrap;
+      }
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    header {
+      .container {
+        .row {
+          .colLeft {
+            width: 50%;
+          }
+
+          .logo {
+            width: 50%;
+          }
+
+          .colRight {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    header {
+      .container {
+        .row {
+          .colLeft {
+            display: none;
+          }
+
+          .logo {
+            width: 100%;
+          }
+
+          .colRight {
+            display: none;
+          }
+        }
       }
     }
   }
