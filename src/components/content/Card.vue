@@ -1,4 +1,6 @@
 <script>
+  import { toDisplayString } from "vue";
+
   export default {
     name: "Card",
     props: {
@@ -12,7 +14,8 @@
 <template>
   <div class="col">
     <div class="card">
-      <img :src="photo.frontImage" alt="product" />
+      <img class="front" :src="photo.frontImage" alt="product front" />
+      <img class="back" :src="photo.backImage" alt="product back" />
       <p>{{ photo.brand }}</p>
       <h3>{{ photo.name }}</h3>
       <span class="orange">{{ photo.price }}$ </span>
@@ -35,6 +38,24 @@
       img {
         width: 100%;
         margin-bottom: 2px;
+      }
+
+      .front {
+        display: block;
+      }
+
+      .back {
+        display: none;
+      }
+
+      &:hover {
+        .front {
+          display: none;
+        }
+
+        .back {
+          display: block;
+        }
       }
 
       h3 {
@@ -60,6 +81,7 @@
         position: relative;
         bottom: 150px;
         display: flex;
+        gap: 5px;
         color: white;
         font-size: 15px;
         font-weight: 800;
